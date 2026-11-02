@@ -1,8 +1,13 @@
 // ex3.js
-function run() {
-  for (var i = 0; i < 3; i++) {
-    setTimeout(() => console.log(i), 0);
-  }
+function printNumber(val) {
+  setTimeout(() => {
+    console.log(val);
+  }, 0);
 }
 
+function run() {
+  for (var i = 0; i < 3; i++) {
+    printNumber(i);
+  }
+}
 if (typeof module !== "undefined") module.exports = { run };

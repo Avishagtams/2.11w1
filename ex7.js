@@ -8,19 +8,12 @@ function loadOrders(callback) {
 }
 
 function run() {
-  let user;
-  let orders;
-
-  loadUser((name) => {
-    user = name;
+  loadUser((user) => {
+    console.log("User: " + user);
+    loadOrders((orders) => {
+      console.log("Orders: " + orders);
+    });
   });
-
-  loadOrders((count) => {
-    orders = count;
-  });
-
-  console.log("User: " + user);
-  console.log("Orders: " + orders);
 }
 
 if (typeof module !== "undefined") module.exports = { run };
